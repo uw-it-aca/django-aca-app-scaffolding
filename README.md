@@ -16,4 +16,5 @@ Included:
 
 Concepts:
 * Mobile-first responsive using RESS
-* Using Django templates or with Handlebars templates
+* Basic templating using Django templates
+* Hybrid templating using Handlebars templates
