@@ -3,6 +3,12 @@ ACA Django App Scaffold
 
 A Django app template for creating mobile-first responsive applications.
 
+Django project dependencies:
+* Django - python web development framework
+* Django Mobility - server-side device detection
+* Django Compressor - server-side static file minification and compression
+* Django TemplateTagHandlebars - handles Handlebars templating
+
 Included:
 * HTML5 Boilerplate - optimized boilerplate template
 * Normalize - base css reset
@@ -10,9 +16,6 @@ Included:
 * LessCSS - css preprocessor
 * jQuery - javascript
 * Handlebars - mustache style templating
-* Django - python web development framework
-* Django Mobility - server-side device detection
-* Django Compressor - server-side static file minification and compression
 
 Concepts:
 * Mobile-first responsive using RESS
