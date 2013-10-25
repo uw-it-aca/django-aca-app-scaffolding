@@ -1,6 +1,5 @@
 $(function() {
 
-
     // show the handlebars content example
     $("#show_hb_content").click(function(e) {
         

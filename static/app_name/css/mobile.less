@@ -1,13 +1,33 @@
 /*** breakpoints ***/
 @tablet: ~"screen and (min-width: 768px)";
 
-body { padding: 2em; background: yellow; 
-    
-    
-    @media @tablet {  
-        background: aqua;
-    }
+html, body { height: 100%; }
+
+
+/* wrapper for sticky footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -60px;
+  padding: 0 0 60px;
 }
 
-#content { border: solid 1px #999; padding: 1em; }
-#footer { color: #666; margin-top: 2em; }
+#content { 
+    
+    @media @tablet { }
+    
+}
+
+/* sticky footer with fixed height */
+#footer {
+  height: 60px;
+  background-color: #f5f5f5;
+  position: relative;
+  
+  .credit { line-height: 60px; }
+  
+}
+
+/* device status for development purposes */
+#device { position: absolute; top:10px; right: 10px; text-transform: uppercase; }
