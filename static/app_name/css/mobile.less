@@ -1,8 +1,15 @@
 /*** breakpoints ***/
+
 @tablet: ~"screen and (min-width: 768px)";
 
-html, body { height: 100%; }
 
+/*** less variables ***/
+
+
+
+
+/*** global ***/
+html, body { height: 100%; }
 
 /* wrapper for sticky footer */
 #wrap {
@@ -13,8 +20,11 @@ html, body { height: 100%; }
   padding: 0 0 60px;
 }
 
+/*** content ***/
+
 #content { 
     
+    /* inline media queries */
     @media @tablet { }
     
 }
@@ -25,9 +35,10 @@ html, body { height: 100%; }
   background-color: #f5f5f5;
   position: relative;
   
-  .credit { line-height: 60px; }
+  .credit { line-height: 60px; margin: 0; }
   
 }
 
-/* device status for development purposes */
-#device { position: absolute; top:10px; right: 10px; text-transform: uppercase; }
+/*** developer ***/
+
+#developer { position: absolute; top:10px; right: 10px; text-transform: uppercase; }

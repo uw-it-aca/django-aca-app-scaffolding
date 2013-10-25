@@ -43,7 +43,7 @@
             
             {% if IS_DESKTOP %}
             <link rel="stylesheet" href="{{ STATIC_URL }}app_name/css/desktop.less" type="text/less">
-            {{% endif %}
+            {% endif %}
 
         {% endcompress %}
         
@@ -80,14 +80,17 @@
 
         <div id="footer">
             <div class="container">
+                <!-- example of is_desktop usage in templates -->    
+                {% if IS_DESKTOP %}
                 <p class="text-muted credit">Courtesy of <a href="">Charlon Palacay</a> and <a href="">Craig Stimmel</a>. UW-IT ACA</p>
-                
-                
+                {% else %}
+                <p class="text-muted credit">Courtesy of <a href="">Charlon</a> and <a href="">Craig</a>. UW-IT ACA</p>
+                {% endif %}
             </div>
         </div>
         
-        <div id="device">
-            <!-- example of is_desktop usage in templates -->    
+        <!-- show this in dev mode -->
+        <div id="developer">
             <span class="label label-danger">{% if IS_DESKTOP %}Desktop{% else %}Mobile{% endif %}</span>
         </div>
         
