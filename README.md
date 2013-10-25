@@ -23,11 +23,15 @@ Concepts:
 * Hybrid templating using Handlebars templates
 
 
-Usage
-=====
+Developers
+==========
 
-Create a Django Project
-* asdkjf
+* Create a Django Project
+* Create a Django app in the project using the app scaffold 
+* Commit the app to a repository in github
+* 
 
-Use the app-template
-* asldkjf
+Collaborators
+=============
+* Create a local django project
+* pip install the app via github or pypi
