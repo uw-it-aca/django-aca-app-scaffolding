@@ -7,15 +7,14 @@ from django.views.generic import TemplateView
 
 urlpatterns = patterns('',
 
-    url(r'^$', 'scaffold.views.pages.home'),
-    url(r'basic/$', 'scaffold.views.pages.basic'),
-    url(r'hybrid/$', 'scaffold.views.pages.hybrid'),
-    
-    url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
-    
+    url(r'^$', 'app_name.views.pages.home'),
+    url(r'basic/$', 'app_name.views.pages.basic'),
+    url(r'hybrid/$', 'app_name.views.pages.hybrid'),
+        
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
+    
 )

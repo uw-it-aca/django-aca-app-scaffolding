@@ -11,14 +11,14 @@
         <meta http-equiv="cleartype" content="on">
         
         <!-- favicon and mobile device icons-->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ STATIC_URL }}ico/apple-touch-icon-144x144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ STATIC_URL }}ico/apple-touch-icon-114x114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ STATIC_URL }}ico/apple-touch-icon-72x72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ STATIC_URL }}ico/apple-touch-icon-57x57-precomposed.png"> 
-        <link rel="shortcut icon" href="{{ STATIC_URL }}ico/favicon.ico" />
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ STATIC_URL }}app_name/ico/apple-touch-icon-144x144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ STATIC_URL }}app_name/ico/apple-touch-icon-114x114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ STATIC_URL }}app_name/ico/apple-touch-icon-72x72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ STATIC_URL }}app_name/ico/apple-touch-icon-57x57-precomposed.png"> 
+        <link rel="shortcut icon" href="{{ STATIC_URL }}app_name/ico/favicon.ico" />
         
         <!-- windows8 - tile icon  & color -->
-        <meta name="msapplication-TileImage" content="{{ STATIC_URL }}ico/apple-touch-icon-144x144-precomposed.png">
+        <meta name="msapplication-TileImage" content="{{ STATIC_URL }}app_name/ico/apple-touch-icon-144x144-precomposed.png">
         <meta name="msapplication-TileColor" content="#222222">
         
         <!-- ios webapps - delete if not needed -->
@@ -29,56 +29,81 @@
         <meta name="apple-mobile-web-app-title" content="">
         -->
         
-        <!-- normalize OR bootstrap -->
-        <link rel="stylesheet" href="{{ STATIC_URL }}/css/vendor/normalize-2.1.3.css">
-        <!--
-        <link rel="stylesheet" href="{{ STATIC_URL }}/css/vendor/bootstrap-3.0.0.min.css">
-        -->
+        <!-- normalize/bootstrap -depending on what you want to start with -->
+        <!--<link rel="stylesheet" href="{{ STATIC_URL }}app_name/css/vendor/normalize-2.1.3.css">-->
+        <link rel="stylesheet" href="{{ STATIC_URL }}app_name/css/vendor/bootstrap-3.0.0.min.css">
        
-        <!-- add google fonts or webfonts if needed -->
+        <!-- add google/web fonts if needed -->
         
         {% load compress %}
         
         {% compress css %} 
         
-            <!-- if mobile -->
-            <link rel="stylesheet" href="{{ STATIC_URL }}css/mobile.less">
+            <link rel="stylesheet" href="{{ STATIC_URL }}app_name/css/mobile.less" type="text/less">
             
-            <!-- if desktop -->
-            <link rel="stylesheet" href="{{ STATIC_URL }}css/desktop.less">
-            
+            {% if IS_DESKTOP %}
+            <link rel="stylesheet" href="{{ STATIC_URL }}app_name/css/desktop.less" type="text/less">
+            {% endif %}
+
         {% endcompress %}
         
-        <script src="{{ STATIC_URL }}js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="{{ STATIC_URL }}app_name/js/vendor/modernizr-2.6.2.min.js"></script>
         
     </head>
     <body>
         
-        <h1>ACA Scaffolding</h1>
-                        
-        <ul>
-            <li><a href="/">home</a></li>
-            <li><a href="/basic">basic</a></li>
-            <li><a href="/hybrid">hybrid</a></li>
-        </ul>
+        <!-- wrap all content here -->
+        <div id="wrap">
         
-        <!-- Add your site or application content here -->
-        <div>
-            {% block content %}{% endblock %}
+            <!-- begin page content -->
+            <div class="container">
+                
+                <div class="page-header">
+                   <h1>Django App Scaffolding</h1>
+                </div>
+                
+                <ul>
+                    <li><a href="/">home</a></li>
+                    <li><a href="/basic">basic</a></li>
+                    <li><a href="/hybrid">hybrid</a></li>
+                </ul>
+                
+                <!-- add your site or application content here -->
+                <div id="content">
+                    {% block content %}{% endblock %}
+                </div>            
+                
+            </div>
+        
+        
+        </div><!-- /wrap -->
+
+        <div id="footer">
+            <div class="container">
+                <!-- example of is_desktop usage in templates -->    
+                {% if IS_DESKTOP %}
+                <p class="text-muted credit">Courtesy of <a href="">Charlon Palacay</a> and <a href="">Craig Stimmel</a>. UW-IT ACA</p>
+                {% else %}
+                <p class="text-muted credit">Courtesy of <a href="">Charlon</a> and <a href="">Craig</a>. UW-IT ACA</p>
+                {% endif %}
+            </div>
         </div>
         
-        <div>brought to you by ACA</div>
+        <!-- show this in dev mode -->
+        <div id="developer">
+            <span class="label label-danger">{% if IS_DESKTOP %}Desktop{% else %}Mobile{% endif %}</span>
+        </div>
         
         <!-- jquery -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}app_name/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
                 
         <!-- javascript -->
         {% compress js %}
-            <script src="{{ STATIC_URL }}js/vendor/bootstrap-3.0.0.min.js"></script>
-            <script src="{{ STATIC_URL }}js/vendor/handlebars-1.0.0.min.js"></script>
+            <script src="{{ STATIC_URL }}app_name/js/vendor/bootstrap-3.0.0.min.js"></script>
+            <script src="{{ STATIC_URL }}app_name/js/vendor/handlebars-1.0.0.min.js"></script>
             
-            <script src="{{ STATIC_URL }}js/main.js"></script>
+            <script src="{{ STATIC_URL }}app_name/js/main.js"></script>
             {% block extra_js %}{% endblock %}
         {% endcompress %}
         
