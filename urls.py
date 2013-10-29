@@ -7,9 +7,9 @@ from django.views.generic import TemplateView
 
 urlpatterns = patterns('',
 
-    url(r'^$', 'app_name.views.pages.home'),
-    url(r'basic/$', 'app_name.views.pages.basic'),
-    url(r'hybrid/$', 'app_name.views.pages.hybrid'),
+    url(r'^$', '{{ app_name }}.views.pages.home'),
+    url(r'basic/$', '{{ app_name }}.views.pages.basic'),
+    url(r'hybrid/$', '{{ app_name }}.views.pages.hybrid'),
         
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
