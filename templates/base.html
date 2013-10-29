@@ -35,17 +35,17 @@
        
         <!-- add google/web fonts if needed -->
         
-        <!-- load compress here -->
+        {% templatetag openblock %} load compress {% templatetag closeblock %}
         
-        <!-- compress css -->
+        {% templatetag openblock %} compress css {% templatetag closeblock %}
         
             <link rel="stylesheet" href="{% templatetag openvariable %} STATIC_URL {% templatetag closevariable %}{{ app_name }}/css/mobile.less" type="text/less">
             
-            {% if is_desktop %}
+            {% templatetag openblock %} if is_desktop {% templatetag closeblock %}
             <link rel="stylesheet" href="{% templatetag openvariable %} STATIC_URL {% templatetag closevariable %}{{ app_name }}/css/desktop.less" type="text/less">
-            {% endif %}
+            {% templatetag openblock %} endif {% templatetag closeblock %}
 
-        <!-- endcompress here -->
+        {% templatetag openblock %} endcompress {% templatetag closeblock %}
         
         <script src="{% templatetag openvariable %} STATIC_URL {% templatetag closevariable %}{{ app_name }}/js/vendor/modernizr-2.6.2.min.js"></script>
         
@@ -99,13 +99,13 @@
         <script>window.jQuery || document.write('<script src="{% templatetag openvariable %} STATIC_URL {% templatetag closevariable %}{{ app_name }}/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
                 
         <!-- javascript -->
-        <!-- compress js here -->
+        {% templatetag openblock %} compress js {% templatetag closeblock %}
             <script src="{% templatetag openvariable %} STATIC_URL {% templatetag closevariable %}{{ app_name }}/js/vendor/bootstrap-3.0.0.min.js"></script>
             <script src="{% templatetag openvariable %} STATIC_URL {% templatetag closevariable %}{{ app_name }}/js/vendor/handlebars-1.0.0.min.js"></script>
             
             <script src="{% templatetag openvariable %} STATIC_URL {% templatetag closevariable %}{{ app_name }}/js/main.js"></script>
             {% templatetag openblock %} block extra_js {% templatetag closeblock %}{% templatetag openblock %} endblock {% templatetag closeblock %}
-        <!-- endcompress here -->
+        {% templatetag openblock %} endcompress {% templatetag closeblock %}
         
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <!--
