@@ -35,9 +35,9 @@
        
         <!-- add google/web fonts if needed -->
         
-        <!-- {% load compress %} -->
+        <!-- load compress here -->
         
-        <!-- {% compress css %} -->
+        <!-- compress css -->
         
             <link rel="stylesheet" href="{{ STATIC_URL }}{{ app_name }}/css/mobile.less" type="text/less">
             
@@ -45,7 +45,7 @@
             <link rel="stylesheet" href="{{ STATIC_URL }}{{ app_name }}/css/desktop.less" type="text/less">
             {% endif %}
 
-        <!-- {% endcompress %} -->
+        <!-- endcompress here -->
         
         <script src="{{ STATIC_URL }}{{ app_name }}/js/vendor/modernizr-2.6.2.min.js"></script>
         
@@ -99,13 +99,13 @@
         <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}{{ app_name }}/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
                 
         <!-- javascript -->
-        <!--{% compress js %} -->
+        <!-- compress js here -->
             <script src="{{ STATIC_URL }}{{ app_name }}/js/vendor/bootstrap-3.0.0.min.js"></script>
             <script src="{{ STATIC_URL }}{{ app_name }}/js/vendor/handlebars-1.0.0.min.js"></script>
             
             <script src="{{ STATIC_URL }}{{ app_name }}/js/main.js"></script>
             {% block extra_js %}{% endblock %}
-        <!-- {% endcompress %} -->
+        <!-- endcompress here -->
         
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <!--
