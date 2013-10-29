@@ -1,7 +1,7 @@
-{% extends 'base.html' %}
+{% templatetag openblock %} extends 'base.html' {% templatetag closeblock %}
 
 
-{% block content %}
+{% templatetag openblock %} block content {% templatetag closeblock %}
 
 <h2>Hybrid Templates</h2>
 
@@ -11,6 +11,6 @@
 
 <p>Load content via Handlebars... <button type="button" class="btn btn-primary" id="show_hb_content">Load content</button></p>
 
-{% include "handlebars/content.html" %}
+{% templatetag openblock %} include "handlebars/content.html" {% templatetag closeblock %}
 
-{% endblock %}
+{% templatetag openblock %} endblock {% templatetag closeblock %}

@@ -1,7 +1,7 @@
-{% load templatetag_handlebars %}
+{% templatetag openblock %} load templatetag_handlebars {% templatetag closeblock %}
   
-{% tplhandlebars "hb_loading" %}
+{% templatetag openblock %} tplhandlebars "hb_loading" {% templatetag closeblock %}
 
     <div class="loading">Loading...</div>
     
-{% endtplhandlebars %}
+{% templatetag openblock %} endtplhandlebars {% templatetag closeblock %}
