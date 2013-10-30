@@ -1,0 +1,3 @@
+include README.md
+recursive-include {{ app_name }}/static *
+recursive-include {{ app_name }}/templates *
